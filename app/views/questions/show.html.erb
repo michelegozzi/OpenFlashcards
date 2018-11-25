@@ -1,0 +1,17 @@
+<% provide(:title, 'Question') %>
+
+	<p class="lead">
+	  <%= @question.text %>
+	</p>
+
+	<%= render 'answers', question: @question %>
+	<%= render 'add_new_answer_modal', question: @question %>
+	
+	<div class="btn-group" role="group" aria-label="Show buttons">
+	  <!-- % = link_to 'Back', [@topic, :questions], class: "btn btn-secondary" % -->
+	  <%= link_to 'Back', topic_questions_path(@topic, :page => params[:page]), class: "btn btn-secondary" %>
+	  <%= link_to 'Edit', edit_question_path(@question), class: "btn btn-secondary" %>
+	  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addNewAnswerModal">Add new answer</a>
+    </div>
+
+	

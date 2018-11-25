@@ -1,0 +1,18 @@
+<header>
+
+  <% content_for :sitenavbarlinks do %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Help", help_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact", contact_path, class: "nav-link" %>
+      </li>
+      <%= render 'layouts/header_contents' %>
+	  <%= render 'layouts/header_profile' %>
+    </ul>
+  <% end %>
+
+  <%= render 'layouts/site_navbar' %>
+
+</header>

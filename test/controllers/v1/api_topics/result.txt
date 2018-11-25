@@ -1,0 +1,12 @@
+Run options: --seed 35013
+
+# Running:
+
+Token token=EAABj445NLfsBAAQVUZAGFiugdj8jbo1HTfQ5AZAsiDwdaRMPE3o9oDGPW9059gBywQgDfwbsHHQy0efoGGaKFfJjR4ZA3MdkNtdFeLG8t6FkGYExAyCvRyFAt1ZBJqwxsE2uZCTRHmlhLEpZBuZCMvoLQCypDn4Kai76gm6BU0vusFkiXiFzINZAratPnm685TMZD
+#<Net::HTTPOK:0x5945070>
+{"name":"Theca omnis nam nostrum.","id":{"$oid":"59135b21aaf85f4fac000000"},"description":"Cunabula voluptatem quisquam perspiciatis suspendo terror articulus vulpes.","questions":[]}
+.
+
+Finished in 1.217499s, 0.8214 runs/s, 0.8214 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips

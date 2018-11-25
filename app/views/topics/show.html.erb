@@ -1,0 +1,15 @@
+<p class="lead shadow p-3 mb-2 bg-white rounded">
+  <strong>Name:</strong>
+  <%= @topic.name %>
+</p>
+
+<p class="lead shadow p-3 mb-2 bg-white rounded">
+  <strong>Description:</strong>
+  <%= @topic.description %>
+</p>
+
+<div class="btn-group" role="group" aria-label="Show buttons">
+  
+  <%= link_to 'Back', topics_path, class: "btn btn-secondary" %>
+  <%= link_to 'Edit', edit_topic_path(@topic), class: "btn btn-primary" %>
+</div>

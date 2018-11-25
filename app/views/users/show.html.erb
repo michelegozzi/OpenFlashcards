@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<h2>Api Keys</h2>
+<% @user.api_keys.each do |api_key| %>
+  <p>
+    <strong>Access Token:</strong>
+    <%= api_key.access_token %>
+  </p>
+  <p>
+  <%= link_to 'Destroy token', [api_key.user, api_key],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
+ 
+  
+<% end %>
+ 
+<h2>Add an access token:</h2>
+<%= form_with(model: [ @user, @user.api_keys.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :access_token %><br>
+    <%= form.text_field :access_token %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,33 @@
+<div class="modal fade" id="addNewTopicModal" tabindex="-1" role="dialog" aria-labelledby="addNewTopicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addNewTopicModalLabel">Add new topic</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  
+	  <%= form_with(model: @topic, local: true) do |form| %>
+      <div class="modal-body">
+		  
+		  
+		  <p>
+			<%= form.label :name %>
+            <%= form.text_area :name, class: "form-control", rows: "3", placeholder: "Add name here..." %>
+          </p>
+
+          <p>
+            <%= form.label :description %>
+            <%= form.text_area :description, class: "form-control", rows: "3", placeholder: "Add description here..." %>
+          </p>
+		  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= form.submit :class => 'btn btn-primary' %>
+      </div>
+	  <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+
+<% provide(:title, 'Topics') %>
+
+<h1><%= yield(:title) %></h1>
+
+<%= will_paginate(@questions, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td><%= link_to topic.name, [topic, :questions] %></td>
+        <td><%= topic.description %></td>
+        <td>
+		  <div class="btn-group" role="group" aria-label="Show buttons">
+		    <%= link_to [topic, :questions], class: "btn btn-secondary btn-sm" do %>
+			  List <span class="badge badge-success"><%= topic.questions.count %></span>
+			<% end %>
+		    <%= link_to 'Show', topic, class: "btn btn-secondary btn-sm" %>
+            <%= link_to 'Edit', edit_topic_path(topic), class: "btn btn-secondary btn-sm" %>
+            <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+		  </div>
+		</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate(@questions, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+
+<br>
+
+<div class="btn-group" role="group" aria-label="Show buttons">
+  <%= link_to 'Back', topics_path, class: "btn btn-secondary" %>
+  <!-- % = link_to 'New Topic', new_topic_path, class: "btn btn-primary" % -->
+  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addNewTopicModal">New topic</a>
+</div>
+	
+<!-- Add new question Modal -->
+<%= render 'add_new_topic_modal', topic: @topic %>

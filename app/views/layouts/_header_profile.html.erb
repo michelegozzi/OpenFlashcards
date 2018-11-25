@@ -1,0 +1,21 @@
+
+	<% if signed_in? %>
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.name %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <%= link_to "Profile", current_user, class: "dropdown-item" %>
+          <%= link_to "Settings", '#', class: "dropdown-item" %>
+		  <div class="dropdown-divider"></div>
+	      <%= link_to "Sign out", signout_path, method: "delete", class: "dropdown-item" %>
+		</div>
+      </li>
+	<% else %>
+		<li class="nav-item">
+			<%= link_to "Sign in", signin_path, class: "nav-link" %>
+		</li>
+		<li class="nav-item">
+			<%= link_to "Sign up", signup_path, class: "nav-link" %>
+		</li>
+	<% end %>

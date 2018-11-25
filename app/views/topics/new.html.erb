@@ -1,0 +1,33 @@
+<h1>New Topic</h1>
+
+<!-- % = render 'form', topic: @ topic % -->
+
+<%= form_with(model: @topic, local: true) do |form| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h4>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_area :name, class: "form-control", rows: "3", placeholder: "Add name here..." %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", rows: "3", placeholder: "Add description here..." %>
+  </div>
+
+	<div class="btn-group" role="group" aria-label="Show buttons">
+	  <%= link_to 'Back', topics_path, class: "btn btn-secondary" %>
+	  <%= form.submit :class => 'btn btn-primary' %>
+	</div>
+
+<% end %>
