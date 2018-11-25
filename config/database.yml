@@ -25,3 +25,5 @@ production:
   database: db/production.pg
   adapter: postgresql
   encoding: unicode
+  username: <%= ENV['OPENFLASHCARDS_DATABASE_USERNAME'] %>
+  password: <%= ENV['OPENFLASHCARDS_DATABASE_PASSWORD'] %>
