@@ -38,4 +38,10 @@ rails g migration add_remember_token_to_users remember_token:string
 
 * Deployment instructions
 
+* Repository
+git remote add OpenFlashcards https://github.com/michelegozzi/OpenFlashcards.git
+git remote -v
+git pull OpenFlashcards master --allow-unrelated-histories
+git push OpenFlashcards master
+
 * ...
