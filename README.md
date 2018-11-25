@@ -44,4 +44,10 @@ git remote -v
 git pull OpenFlashcards master --allow-unrelated-histories
 git push OpenFlashcards master
 
+* heroku
+
+https://devcenter.heroku.com/articles/getting-started-with-rails5
+
+
+
 * ...
