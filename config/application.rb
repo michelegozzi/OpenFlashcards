@@ -22,7 +22,7 @@ module OpenFlashcards
 	#config.assets.initialize_on_precompile = true
 	
 	#config.serve_static_assets = true
-	config.assets.enabled = false
+	config.assets.enabled = true
 	
   end
 end
