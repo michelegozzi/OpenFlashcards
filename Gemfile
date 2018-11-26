@@ -39,7 +39,7 @@ gem "active_model_serializers", require: true
 #gem 'bcrypt-ruby'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'twitter-bootstrap-rails-confirm'
+#gem 'twitter-bootstrap-rails-confirm'
 
 group :production do
   gem 'pg'

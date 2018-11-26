@@ -1,3 +1,4 @@
+/*
 $(document).ready(function () {
   $("a[data-confirm]").data({
     "confirm-fade": true,
@@ -11,3 +12,4 @@ $(document).ready(function () {
     "confirm-proceed-class": "btn-danger"
   });
 });
+*/
