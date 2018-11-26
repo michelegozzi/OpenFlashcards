@@ -11,17 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: 'form-control'%>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="btn-group" role="group" aria-label="Show buttons">
+  
+    <%= link_to 'Back', users_path, class: "btn btn-secondary" %>
+    <%= link_to 'Show', @user, class: "btn btn-primary" %>
+    <%= form.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

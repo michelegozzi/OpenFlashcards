@@ -1,0 +1,16 @@
+<div class="list-group">
+<% @user.api_keys.each do |api_key| %>
+  <div class="list-group-item shadow p-2 mb-2 bg-white rounded" style="width: 40rem;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+		  <strong>Access Token:</strong><%= api_key.access_token %>
+		</div>
+        <div class="col-sm-1">
+		  <%= link_to 'Destroy token', [api_key.user, api_key], method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

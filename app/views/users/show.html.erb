@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'User') %>
+<h1><%= yield(:title) %></h1>
 
 <p>
   <strong>Name:</strong>
@@ -10,32 +11,12 @@
   <%= @user.email %>
 </p>
 
-<h2>Api Keys</h2>
-<% @user.api_keys.each do |api_key| %>
-  <p>
-    <strong>Access Token:</strong>
-    <%= api_key.access_token %>
-  </p>
-  <p>
-  <%= link_to 'Destroy token', [api_key.user, api_key],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
- 
-  
-<% end %>
- 
-<h2>Add an access token:</h2>
-<%= form_with(model: [ @user, @user.api_keys.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :access_token %><br>
-    <%= form.text_field :access_token %>
-  </p>
-  
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'api_keys', user: @user %>
+<%= render 'add_new_api_key_modal', user: @user %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="btn-group" role="group" aria-label="Show buttons">
+  <%= link_to 'Back', users_path, class: "btn btn-secondary" %>
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %>
+  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addNewApiKeyModal">Add new api key</a>
+</div>
+

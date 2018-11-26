@@ -10,9 +10,6 @@ u1 = User.create(name: "Michele Gozzi", email: "michelegozzi@gmail.com", passwor
 #u.errors.full_messages
 u1.save
 
-u2 = User.create(name: "Katherine Casler", email: "kcasler@msn.com", password: "Life1sBeautifull!", password_confirmation: "Life1sBeautifull!")
-u2.save
-
 t2 = Topic.create(name: "US Citizenship Civic Test (OREGON) Rev. 01/17", description: "Civics (History and Government) Questions for the Naturalization Test (rev. 01/17)")
 
 j2 = [

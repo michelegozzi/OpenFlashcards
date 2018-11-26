@@ -1,0 +1,25 @@
+<!-- Add new api key Modal -->
+<div class="modal fade" id="addNewApiKeyModal" tabindex="-1" role="dialog" aria-labelledby="addNewApiKeyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addNewApiKeyModalLabel">Add new api key</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  <%= form_with(model: [ @user, @user.api_keys.build ], local: true) do |form| %>
+      <div class="modal-body">
+		  <p>
+			<%= form.label :access_token, class: "sr-only" %><br>
+			<%= form.text_area :access_token, class: "form-control", rows: "3", placeholder: "Add access token here..." %>
+		  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= form.submit :class => 'btn btn-primary' %>
+      </div>
+	  <% end %>
+    </div>
+  </div>
+</div>
