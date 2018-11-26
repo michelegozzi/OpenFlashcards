@@ -16,5 +16,4 @@
 //= require jquery
 //= require popper
 //= require bootstrap
-//= require twitter/bootstrap/rails/confirm
 // = require_tree .
