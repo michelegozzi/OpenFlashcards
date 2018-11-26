@@ -15,7 +15,7 @@ before_action :set_question, only: [:show, :edit, :update, :destroy]
   # GET /questions/test
   def test
     
-	@questions = Question.where('topic_id = ?', params[:topic_id])
+	@questions = Question.where('topic_id = ?', params[:topic_id]).order("RANDOM()")
 	@topic = Topic.find(params[:topic_id])
   end
 

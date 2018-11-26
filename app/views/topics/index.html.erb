@@ -24,6 +24,7 @@
 		    <%= link_to [topic, :questions], class: "btn btn-secondary btn-sm" do %>
 			  List <span class="badge badge-success"><%= topic.questions.count %></span>
 			<% end %>
+			<%= link_to 'Test', test_topic_questions_path(topic), class: "btn btn-secondary btn-sm" %>
 		    <%= link_to 'Show', topic, class: "btn btn-secondary btn-sm" %>
             <%= link_to 'Edit', edit_topic_path(topic), class: "btn btn-secondary btn-sm" %>
             <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>

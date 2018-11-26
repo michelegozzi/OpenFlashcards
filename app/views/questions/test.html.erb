@@ -1,10 +1,12 @@
+<% provide(:title, 'Test you knowledge') %>
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
   <div class="carousel-inner"  role="listbox">
-    <% @questions.each.with_index do |question, i| %>
+    <% @questions.each.with_index(1) do |question, i| %>
       
-	  <div class="carousel-item text-center p-4 align-items-center <%= 'active' if i == 0 %>">
+	  <div class="carousel-item text-center p-4 align-items-center <%= 'active' if i == 1 %>">
 	    <p>
-		  <%= question.text %> <a href="#" class="btn btn-primary btn-sm" data-target=".targetElement<%=i%>" data-toggle="collapse">Show</a>
+		  [<%= i %>/<%= @questions.count %>] <%= question.text %> <a href="#" class="btn btn-primary btn-sm" data-target=".targetElement<%=i%>" data-toggle="collapse">Show</a>
 		</p>
         <% question.answers.each do |answer| %>
           <p class="targetElement<%=i%> collapse"><%= answer.text %></p>
@@ -19,4 +21,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+
+
+<div class="btn-group" role="group" aria-label="Show buttons">
+  <%= link_to 'Back', topics_path(:page => params[:page]), class: "btn btn-secondary" %>
 </div>
